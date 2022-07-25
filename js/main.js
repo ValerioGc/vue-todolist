@@ -7,11 +7,15 @@ var container = new Vue({
                 done: false
             },
             {
-                text: 'ripassare html',
+                text: 'ripassare JavaScript',
+                done: true
+            },
+            {
+                text: 'ripassare HTML',
                 done: false
             },
             {
-                text: 'ripassare css',
+                text: 'ripassare CSS',
                 done: true
             }
         ]

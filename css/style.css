@@ -6,9 +6,11 @@
 #container {
     width: 70vw;
     height: 70vh;
-    margin: 120px auto 0;
+    margin: 60px auto 0;
     background-color: lightblue;
-    
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #000;
+    padding: 0 50px;
 }
 /* Input To Do */
 #newToDo {
@@ -34,19 +36,20 @@ input:hover {
 }
 /* List Item TO DO */
 ul {
-    text-align: center;
+
     list-style-type: none;
 }
 ul li {
     padding: 20px;
     border-bottom: 1px solid black;
-    width: 60%;
-    margin: auto;
     text-transform: capitalize;
     cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 .fa-circle-xmark {
-    margin-left: 80%;
+    /* margin-left: 80%; */
     cursor: pointer;
 }
 .fa-circle-xmark:hover {
@@ -56,4 +59,9 @@ ul li {
 
 .done {
     text-decoration: line-through;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
 }
