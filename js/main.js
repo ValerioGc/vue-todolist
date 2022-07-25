@@ -25,7 +25,6 @@ var container = new Vue({
         // Funzioni sostituite con ternarie/freccia
         submitNew() {
             this.arrList.push(this.newT);
-            this.newT = '';
         },
         changeStatus (index) {
             if (this.arrList[index].done) {

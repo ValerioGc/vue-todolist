@@ -12,10 +12,12 @@
         <main>
             <h1>TO DO LIST</h1>
             <div id="container">
+                <!-- Sezione Nuovo To do -->
                 <div id="newToDo">
                     <input type="text" id="addNew" placeholder="Crea nuova nota" v-model="newT.text">
                     <button type="submit" @click="arrList.push(newT)">Crea</button>
                 </div>
+                <!-- Lista To Do -->
                 <ul>
                     <li v-for="(text, index) in arrList" :class="{ done: arrList[index].done }" @click="(arrList[index].done) ? arrList[index].done=false : arrList[index].done=true">
                         <h4>{{arrList[index].text}}</h4>

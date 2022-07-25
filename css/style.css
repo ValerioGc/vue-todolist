@@ -3,10 +3,27 @@
     margin: 0;
     padding: 0;
 }
+/* Fonts */
+@font-face {
+    font-family: 'myFont';
+    src: url('../fonts/Gaumont.TTF');
+    /* Font secondario */
+    font-family: 'myFont2';
+    src: url('../fonts/L850-Slab-Regular.ttf');
+}
+/* Corpo Pagina */
+body {
+    font-family: 'myFont', sans-serif;
+    background-color: #d3d3d3;
+}
+h1 {
+    text-align: center;
+    margin-top: 40px;
+}
 #container {
     width: 70vw;
-    margin: 60px auto 0;
-    background-color: lightblue;
+    margin: 60px auto;
+    background-color: #36b4417b;
     border-radius: 10px;
     box-shadow: 0 0 5px 2px #000;
     padding: 0 50px;
@@ -15,7 +32,7 @@
 #newToDo {
     margin: 50px auto;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
     padding: 30px;
 }
 input {
@@ -28,11 +45,9 @@ input {
     box-shadow: 2px 2px 5px #000;
     filter: brightness(90%);
     padding: 5px 10px;
+    font-family: 'myFont2', sans-serif;
 }
-button:hover,
-input:hover {
-    filter: brightness(100%);
-}
+
 /* List Item TO DO */
 ul {
     padding-bottom: 50px;
@@ -40,27 +55,29 @@ ul {
 }
 ul li {
     padding: 20px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
     text-transform: capitalize;
-    cursor: pointer;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.fa-circle-xmark {
-    /* margin-left: 80%; */
+.fa-circle-xmark,
+ul li {
     cursor: pointer;
+}
+.fa-circle-xmark {
     text-decoration: none!important;
     color: #000!important;
 }
-.fa-circle-xmark:hover {
-    color: red!important;
-}
 .done {
     text-decoration: line-through;
-    color: gray;
+    color: #808080;
 }
-h1 {
-    text-align: center;
-    margin-top: 40px;
+/* Hover e Animazioni */
+.fa-circle-xmark:hover {
+    color: red !important;
+}
+button:hover,
+input:hover {
+    filter: brightness(100%);
 }
