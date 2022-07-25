@@ -50,9 +50,11 @@ ul li {
 .fa-circle-xmark {
     /* margin-left: 80%; */
     cursor: pointer;
+    text-decoration: none!important;
+    color: #000!important;
 }
 .fa-circle-xmark:hover {
-    color: red;
+    color: red!important;
 }
 .done {
     text-decoration: line-through;
