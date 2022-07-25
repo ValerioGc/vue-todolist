@@ -13,13 +13,13 @@
             <h1>TO DO LIST</h1>
             <div id="container">
                 <div id="newToDo">
-                    <input type="text" id="addNew" placeholder="Crea nuova nota">
-                    <button>Invia</button>
+                    <input type="text" id="addNew" placeholder="Crea nuova nota" v-model="newT.text">
+                    <button type="submit" @click="arrList.push(newT)">Crea</button>
                 </div>
-                <ul v-for="(text, index) in arrList">
-                    <li :class="{ done: arrList[index].done }" @click="(arrList[index].done) ? arrList[index].done=false : arrList[index].done=true">
+                <ul>
+                    <li v-for="(text, index) in arrList" :class="{ done: arrList[index].done }" @click="(arrList[index].done) ? arrList[index].done=false : arrList[index].done=true">
                         <h4>{{arrList[index].text}}</h4>
-                        <i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i>
+                        <div @click="() => arrList.splice(arrList[index], 1)"><i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i></div>
                     </li>
                 </ul>
             </div>

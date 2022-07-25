@@ -5,7 +5,6 @@
 }
 #container {
     width: 70vw;
-    height: 70vh;
     margin: 60px auto 0;
     background-color: lightblue;
     border-radius: 10px;
@@ -36,7 +35,7 @@ input:hover {
 }
 /* List Item TO DO */
 ul {
-
+    padding-bottom: 50px;
     list-style-type: none;
 }
 ul li {
@@ -55,12 +54,10 @@ ul li {
 .fa-circle-xmark:hover {
     color: red;
 }
-
-
 .done {
     text-decoration: line-through;
+    color: gray;
 }
-
 h1 {
     text-align: center;
     margin-top: 40px;
