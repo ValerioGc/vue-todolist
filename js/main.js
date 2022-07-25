@@ -12,13 +12,10 @@ var container = new Vue({
             },
             {
                 text: 'ripassare css',
-                done: false
+                done: true
             }
         ]
     },
     methods : {
-        addNewToDo () {
-
-        }
     }
 })
