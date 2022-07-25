@@ -17,5 +17,12 @@ var container = new Vue({
         ]
     },
     methods : {
+        changeStatus (index) {
+            if (this.arrList[index].done) {
+                this.arrList[index].done = false;
+            } else {
+                this.arrList[index].done = true;
+            }
+        }
     }
 })

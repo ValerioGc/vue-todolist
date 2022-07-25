@@ -16,7 +16,7 @@
                     <button>Invia</button>
                 </div>
                 <ul v-for="(text, index) in arrList">
-                    <li :class="{ done: arrList[index].done }">
+                    <li :class="{ done: arrList[index].done }" @click="changeStatus(index)">
                         {{arrList[index].text}}
                         <i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i>
                     </li>
