@@ -3,7 +3,7 @@ var container = new Vue({
     data: {
         arrList: [
             {
-                text: 'ripassare javscript',
+                text: 'ripassare vue',
                 done: false
             },
             {

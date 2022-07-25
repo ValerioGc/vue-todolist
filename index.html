@@ -7,17 +7,18 @@
         <title>To Do List</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     </head>
     <body>
         <main>
             <div id="container">
-                <input type="text">
-                <button>Invia</button>
+                <div id="newToDo">
+                    <input type="text">
+                    <button>Invia</button>
+                </div>
                 <ul v-for="(text, index) in arrList">
                     <li>
                         {{arrList[index].text}}
-                        <span><i class="fa-solid fa-circle-xmark"></i></span>
+                        <i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i>
                     </li>
                 </ul>
             </div>
