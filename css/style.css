@@ -43,6 +43,7 @@ ul li {
     width: 60%;
     margin: auto;
     text-transform: capitalize;
+    cursor: pointer;
 }
 .fa-circle-xmark {
     margin-left: 80%;
