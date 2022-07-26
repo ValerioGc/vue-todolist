@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +14,22 @@
             <div id="container">
                 <!-- Sezione Nuovo To do -->
                 <div id="newToDo">
-                    <input type="text" id="addNew" placeholder="Crea nuova nota" v-model="newT.text">
-                    <button type="submit" @click="arrList.push(newT)">Crea</button>
+                    <input type="text" id="addNew" placeholder="Crea nuova nota" v-model.trim="newT.text">
+                    <button
+                        ref="subBtn"
+                        type="submit"
+                        @click="submitNew()"
+                        @keydown.enter="submitNew()" 
+                        :class="{ alert: subM()}"
+                        >Crea</button>
                 </div>
                 <!-- Lista To Do -->
                 <ul>
-                    <li v-for="(text, index) in arrList" :class="{ done: arrList[index].done }" @click="(arrList[index].done) ? arrList[index].done=false : arrList[index].done=true">
-                        <h4>{{arrList[index].text}}</h4>
-                        <div @click="() => arrList.splice(arrList[index], 1)"><i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i></div>
+                    <li v-for="(text, index) in arrList"
+                        :class="{ done: arrList[index].done }"
+                        @click="(arrList[index].done) ? arrList[index].done=false : arrList[index].done=true">
+                            <h4>{{arrList[index].text}}</h4>
+                            <div @click="() => arrList.splice(index, 1)"><i title="Premi per eliminare la nota" class="fa-solid fa-circle-xmark"></i></div>
                     </li>
                 </ul>
             </div>

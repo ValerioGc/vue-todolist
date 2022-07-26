@@ -8,7 +8,7 @@ var container = new Vue({
                 done: false
             },
             {
-                text: 'ripassare JavaScript',
+                text: 'ripassare javacript',
                 done: true
             },
             {
@@ -22,10 +22,30 @@ var container = new Vue({
         ]
     },
     methods : {
-        // Funzioni sostituite con ternarie/freccia
-        submitNew() {
-            this.arrList.push(this.newT);
+    // Funzione controllo newT
+        subM () {
+            let control = null;
+            if (this.newT.text == '') {
+                control = false
+            } else {
+                control = true;
+                //this.$refs.subBtn.focus(); // focus inizia appena viene inserito un carattere
+            }
+            return control;
         },
+        submitNew() {
+            if ((this.newT.text == '') || (!isNaN(this.newT.text))) {
+                alert('inserisci il titolo della nota')
+            } else {
+                let toDo = {
+                    text: this.newT.text,
+                    done: this.newT.done
+                }
+                this.arrList.push(toDo);
+                this.newT.text = ' ';
+            }
+        },
+    // Funzioni sostituite con ternarie/freccia
         changeStatus (index) {
             if (this.arrList[index].done) {
                 this.arrList[index].done = false;
@@ -34,7 +54,7 @@ var container = new Vue({
             }
         },
         removeToDo (index) {
-            this.arrList.splice(this.arrList[index], 1)
+            this.arrList.splice(index, 1)
         }
     }
 })

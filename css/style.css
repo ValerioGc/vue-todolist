@@ -14,16 +14,21 @@
 /* Corpo Pagina */
 body {
     font-family: 'myFont', sans-serif;
-    background-color: #d3d3d3;
+    background-image: linear-gradient(to right top, #aab5b4, #889b9e, #68828a, #4b6878, #344f66, #2f4e68, #294e69, #224d6b, #286680, #357f92, #4a99a1, #65b3ae);
+    background-size: cover;
+    min-height: 100vh;
 }
 h1 {
     text-align: center;
-    margin-top: 40px;
+    padding-top: 40px;
+    font-size: 3rem;
+    text-shadow: 3px 3px 4px #000;
+    color: #fff;
 }
 #container {
     width: 70vw;
     margin: 60px auto;
-    background-color: #36b4417b;
+    background-color: #6cb8721f;
     border-radius: 10px;
     box-shadow: 0 0 5px 2px #000;
     padding: 0 50px;
@@ -32,7 +37,7 @@ h1 {
 #newToDo {
     margin: 50px auto;
     text-align: center;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #000;
     padding: 30px;
 }
 input {
@@ -47,7 +52,6 @@ input {
     padding: 5px 10px;
     font-family: 'myFont2', sans-serif;
 }
-
 /* List Item TO DO */
 ul {
     padding-bottom: 50px;
@@ -60,7 +64,9 @@ ul li {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    animation: flip-in 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+button,
 .fa-circle-xmark,
 ul li {
     cursor: pointer;
@@ -75,9 +81,25 @@ ul li {
 }
 /* Hover e Animazioni */
 .fa-circle-xmark:hover {
-    color: red !important;
+    color: #ff0000!important;
 }
 button:hover,
 input:hover {
     filter: brightness(100%);
+}
+@keyframes flip-in {
+    0% {transform: rotateX(80deg); opacity: 0;}
+    100% {transform: rotateX(0); opacity: 1;}
+}
+.alert {
+    animation: wobble 0.8s infinite both;
+    background-color: #0aca00;
+}
+@keyframes wobble {
+    0%,100% {transform: translateX(0%); transform-origin: 50% 50%;}
+    15% {transform: translateX(-17px) rotate(-6deg);}
+    30% {transform: translateX(12px) rotate(6deg);}
+    45% {transform: translateX(-12px) rotate(-3.6deg);}
+    60% {transform: translateX(7px) rotate(2.4deg);}
+    75% {transform: translateX(- 3px) rotate(-1.2deg);}
 }
